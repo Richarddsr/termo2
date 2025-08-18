@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Lista de cores aceitas e seus valores CSS
 const colorMap = {
     "BRANCO": "#fff",
-    "PRETO": "#000",
+    "PRETO": "#2c2c2cff",
     "VERMELHO": "#ff0000",
     "AZUL": "#0000ff",
     "VERDE": "#4d944dff",
@@ -19,7 +19,9 @@ const colorMap = {
     "LARANJA": "#ffa500",
     "CINZA": "#d8d8d8ff",
     "ROXO": "#800080",
-    "MARROM": "#8b4513"
+    "MARROM": "#8b4513",
+    "FUNDE" : "#bf87e4ff",
+    "PORNO" : "#db6e7cff"
 };
 
     
@@ -112,6 +114,54 @@ const colorMap = {
             setTimeout(() => {
                 document.body.style.backgroundColor = "#fff";
                 alert('Parabéns! Você acertou a palavra.');
+            }, 100);
+            return true;
+        }
+
+        // Se for FUNDE, mostra aviso especial
+        if (word === "FUNDE") {
+            const rowInputs = getRowInputs(rowIndex);
+            rowInputs.forEach((input, index) => {
+                input.style.backgroundColor = "#bf87e4ff";
+                input.style.color = "white";
+            });
+            setTimeout(() => {
+                document.body.style.backgroundColor = "#bf87e4ff";
+                alert('essa palavra aqui é proibida! burrão, tenta dnv');
+            }, 100);
+            return true;
+        }
+
+        // Se for PORNO, muda o texto do subtítulo
+        if (word === "PORNO") {
+            const rowInputs = getRowInputs(rowIndex);
+            rowInputs.forEach((input, index) => {
+                input.style.backgroundColor = "#db6e7cff";
+                input.style.color = "white";
+            });
+            setTimeout(() => {
+                document.body.style.backgroundColor = "#db6e7cff";
+                const subtitle = document.getElementById('subtitle');
+                if (subtitle) {
+                    subtitle.textContent = "calma paizão, assim n da";
+                }
+            }, 100);
+            return true;
+        }
+
+        // Se for RAiOS, muda o texto do subtítulo e fundo amarelo
+        if (word === "RAIOS") {
+            const rowInputs = getRowInputs(rowIndex);
+            rowInputs.forEach((input, index) => {
+                input.style.backgroundColor = "#ffff00";
+                input.style.color = "black";
+            });
+            setTimeout(() => {
+                document.body.style.backgroundColor = "#ffff00";
+                const subtitle = document.getElementById('subtitle');
+                if (subtitle) {
+                    subtitle.textContent = "0 criativade...";
+                }
             }, 100);
             return true;
         }
