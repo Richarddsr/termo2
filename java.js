@@ -102,7 +102,7 @@ const colorMap = {
 
         const word = getWordFromRow(rowIndex);
         console.log(`Palavra verificada: ${word}`);
-        const targetWord = "SEMEN";
+        const targetWord = "XEROX";
 
         // Se for SEMEN, vitória e fundo branco
         if (word === targetWord) {
